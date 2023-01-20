@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Header from "./Header"
+import NavBar from "./NavBar"
+
+import LoggedIn from "./LoggedIn"
+import Profile from "../pages/Profile"
+
+import LoggedOut from "./LoggedOut"
 import LoginForm from "../pages/LoginForm"
 import SignUpForm from "../pages/SignUpForm";
-import LoggedIn from "./LoggedIn"
-import LoggedOut from "./LoggedOut"
-import NavBar from "./NavBar"
+
+
 
 // import logo from './logo.svg';
 import './App.css';
@@ -43,6 +49,8 @@ function App() {
         {user ? (
 
           <Routes>
+            <Route path="/profile" element={<Profile user={user} />}>
+            </Route>
             <Route path="/" element={<LoggedIn user={user} />}>
             </Route>
           </Routes>

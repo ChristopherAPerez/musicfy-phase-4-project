@@ -15,6 +15,7 @@ function SignUpForm({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        name: "",
         username,
         password,
         password_confirmation: passwordConfirmation,
@@ -27,7 +28,7 @@ function SignUpForm({ setUser }) {
         r.json().then((user) => setUser(user));
       }
     });
-    navigate("/login")
+    navigate("/profile")
   }
 
   return (

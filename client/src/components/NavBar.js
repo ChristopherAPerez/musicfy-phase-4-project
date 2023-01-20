@@ -1,19 +1,19 @@
 import React from "react";
-// import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 function NavBar() {
 
-    // const linkStyle = {
-    //     padding: "30px",
-    // };
+    const linkStyle = {
+        padding: "30px",
+    };
 
     return (
         <>
             <br></br>
             <nav>
-                {/* <NavLink className="link" to="/discover" style={linkStyle}>Discover</NavLink>
-                <NavLink className="link" to="/music" style={linkStyle}>My Music</NavLink>
-                <NavLink className="link" to="/upload" style={linkStyle}>Upload</NavLink> */}
+                <NavLink className="link" to="/" style={linkStyle}>Discover</NavLink>
+                <NavLink className="link" to="/" style={linkStyle}>My Music</NavLink>
+                <NavLink className="link" to="/" style={linkStyle}>Upload</NavLink>
             </nav>
         </>
 
