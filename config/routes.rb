@@ -6,6 +6,19 @@ Rails.application.routes.draw do
 
   ################# Routes #####################
 
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+  get "/users", to: "users#index"
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
+
+  get "/albums", to: "albums#index"
+  post "new_album", to: "albums#create"
+
+  get "/songs", to: "songs#index"
+  post "new_song", to: "songs#create"
+
   ################# Routes #####################
 
 end

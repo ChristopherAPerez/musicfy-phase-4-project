@@ -84,3 +84,25 @@ vessel = Album.create(title: "Vessel",
 
 
 puts "✅ Done seeding!"
+
+# {
+#     "title": "Camp",
+#     "artist": "Childish Gambino",
+#     "genre": "Hip-Hop",
+#     "album_image": "https://upload.wikimedia.org/wikipedia/en/e/e2/Childish-gambino-camp.jpg",
+#     "hours": 0,
+#     "minutes": 56,
+#     "seconds": 6,
+#     "likes": 8005,
+#     "user_id": 1,
+#     "song_id": 1
+# }
+
+# {
+#     "title": "Bonfire",
+#     "feature": "",
+#     "hours": 0,
+#     "minutes": 3,
+#     "seconds": 42,
+#     "streams": 9887
+# }
