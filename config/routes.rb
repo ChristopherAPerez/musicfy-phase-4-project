@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/users", to: "users#index"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
+  patch "update_profile", to: "users#update"
 
   get "/albums", to: "albums#index"
   post "new_album", to: "albums#create"

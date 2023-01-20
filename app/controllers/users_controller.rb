@@ -30,6 +30,20 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        user = User.find_by(id: session[:user_id])
+        if user
+            user.update(user_params)
+            if user.valid?
+                render json: user, status: :accepted
+            else
+                render json: { errors: ["Errors"] }, status: :unprocessable_entity
+            end
+        else 
+            render json: { errors: ["Not authorized"] }, status: :unauthorized
+        end
+    end
+
     private 
 
     def user_params

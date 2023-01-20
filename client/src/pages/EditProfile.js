@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import GenreOptions from "./GenreOptions"
+// import GenreOptions from "./GenreOptions"
 
-function EditProfile({ user, isEditing, setIsEditing }) {
+function EditProfile({ user, setUser, isEditing, setIsEditing }) {
 
 
     const [name, setName] = useState(user.name);
@@ -10,9 +10,26 @@ function EditProfile({ user, isEditing, setIsEditing }) {
     const [bio, setBio] = useState(user.bio);
 
     function handleSubmit(e) {
+
         e.preventDefault();
-        console.log(genre)
-        setIsEditing(!isEditing)
+
+        fetch('update_profile', {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            name: name,
+            username: username,
+            bio: bio,
+            favorite_genre: genre
+        }),
+        })
+        .then((r) => r.json())
+        .then((update) => {
+            setUser(update)
+            setIsEditing(!isEditing)
+        });
     }
 
     return (

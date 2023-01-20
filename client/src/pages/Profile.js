@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditProfile from "./EditProfile"
 
-function Profile({ user }) {
+function Profile({ user, setUser }) {
 
   const [isEditing, setIsEditing] = useState(false)
 
@@ -11,7 +11,7 @@ function Profile({ user }) {
       <img src={user.user_avatar} alt={user.user_avatar} width="200" height="300" />
 
       {isEditing ? (<>
-        <EditProfile user={user} isEditing={isEditing} setIsEditing={setIsEditing}/>
+        <EditProfile user={user} setUser={setUser} isEditing={isEditing} setIsEditing={setIsEditing}/>
       </>
       ) : (
         <>
