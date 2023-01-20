@@ -28,7 +28,7 @@ function SignUpForm({ setUser }) {
         r.json().then((user) => setUser(user));
       }
     });
-    navigate("/profile")
+    navigate("/")
   }
 
   return (

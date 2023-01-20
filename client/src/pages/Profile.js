@@ -4,7 +4,7 @@ function Profile({ user }) {
 
   return (
     <>
-        <img src={user.user_avatar} alt={user.user_avatar}/>
+        <img src={user.user_avatar} alt={user.user_avatar} width="200" height="300"/>
         <h3>Name: {user.name}</h3>
         <h3>Username: {user.username}</h3>
         <h3>Go to genre: {user.favorite_genre}</h3>
