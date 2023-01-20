@@ -19,7 +19,10 @@ function SignUpForm({ onLogin }) {
       body: JSON.stringify({
         username,
         password,
-        password_confirmation: passwordConfirmation
+        password_confirmation: passwordConfirmation,
+        bio: "",
+        favorite_genre: "",
+        user_avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy-0mkKKgu3s1V6HfJC5lI8ajzieHjqpwddhPfdXSNfw&s"
       }),
     }).then((r) => {
       setIsLoading(false);

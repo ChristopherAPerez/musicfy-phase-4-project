@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import LoggedIn from "./LoggedIn"
+import { Routes, Route } from "react-router-dom";
+import Header from "./Header"
 import LoginForm from "../pages/LoginForm"
-import SignUpForm from "../pages/SignUpForm"
+import SignUpForm from "../pages/SignUpForm";
+import LoggedIn from "./LoggedIn"
+import LoggedOut from "./LoggedOut"
+import NavBar from "./NavBar"
 
 // import logo from './logo.svg';
 import './App.css';
@@ -9,41 +13,54 @@ import './App.css';
 function App() {
 
   const [user, setUser] = useState(null);
-  const [showLogin, setShowLogin] = useState(true);
 
   useEffect(() => {
-    fetch("/me")
-      .then((r) => r.json())
-      .then((user) => setUser(user));
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
   }, []);
-
-  if (!user) return <LoggedIn />;
 
   return (
     <div className="App">
 
-      {showLogin ? (
-        <div>
-          <LoginForm />
-          <p>
-            Don't have an account? &nbsp;
-            <button onClick={() => setShowLogin(false)}>
-              Sign Up
-            </button>
-          </p>
-          <p>Login</p>
-        </div>
+      {/* <NavBar/> */}
+
+
+      {user ? (
+        <>
+          <Header user={user} setUser={setUser} />
+          <NavBar />
+        </>
       ) : (
-        <div>
-          <SignUpForm />
-          <p>
-            Already have an account? &nbsp;
-            <button onClick={() => setShowLogin(true)}>
-              Log In
-            </button>
-          </p>
-        </div>
+        <Header />
       )}
+
+      <br></br>
+      <main>
+        {user ? (
+
+          <Routes>
+            <Route path="/" element={<LoggedIn user={user} />}>
+            </Route>
+          </Routes>
+
+        ) : (
+
+          <Routes>
+            <Route path="/signup" element={<SignUpForm />}>
+            </Route>
+            <Route path="/login" element={<LoginForm setUser={setUser} />}>
+            </Route>
+            <Route path="/" element={<LoggedOut user={user} />}>
+            </Route>
+          </Routes>
+
+        )}
+      </main>
+
     </div>
   );
 }
