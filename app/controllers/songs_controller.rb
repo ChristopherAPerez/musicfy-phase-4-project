@@ -28,7 +28,7 @@ class SongsController < ApplicationController
     private 
 
     def song_params
-        params.permit(:song_title, :feature, :song_length, :streams, :user_id, :album_id)
+        params.permit(:title, :feature, :hours, :minutes, :seconds, :streams)
     end
 
 end
