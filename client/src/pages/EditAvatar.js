@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import GenreOptions from "./GenreOptions"
 
-function EditProfile({ user, setUser, isEditing, setIsEditing }) {
+function EditProfile({ user, setUser, isEditingAvatar, setIsEditingAvatar }) {
 
 
     const [avatar, setAvatar] = useState(user.user_avatar);
@@ -22,7 +22,7 @@ function EditProfile({ user, setUser, isEditing, setIsEditing }) {
             .then((r) => r.json())
             .then((update) => {
                 setUser(update)
-                setIsEditing(!isEditing)
+                setIsEditingAvatar(!isEditingAvatar)
             });
     }
 

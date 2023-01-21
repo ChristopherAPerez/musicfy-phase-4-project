@@ -4,13 +4,11 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :artist
       t.string :genre
-      t.integer :likes
+      t.string :album_image
       t.integer :hours
       t.integer :minutes
       t.integer :seconds
-      t.string :album_image
-      t.integer :user_id
-      t.integer :song_id
+      t.integer :likes
 
       t.timestamps
     end

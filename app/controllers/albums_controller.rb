@@ -25,6 +25,16 @@ class AlbumsController < ApplicationController
         end
     end
 
+    def show
+        user = User.find_by(id: session[:user_id])
+        if user
+            albums = user.albums
+            render json: albums, include: :song
+        else
+            render json: { errors: ["Not authorized"] }, status: :unauthorized
+        end
+    end
+
     private 
 
     def album_params

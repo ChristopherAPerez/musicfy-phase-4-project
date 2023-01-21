@@ -6,14 +6,6 @@ ryan_met = User.create(name: "Ryan Met", username: "piano_ajr", password: "synes
 tyler_joseph = User.create(name: "Tyler Joseph", username: "mr_misty_eyes", password: "21pilots", bio: "deatch inspires me like a dog inspires a rabbit.", favorite_genre: "Hip-Hop", user_avatar: "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/05/31/Style/Images/twentyonepilots.promo4-JabariJacobs2.jpg?t=20170517")
 josh_dunn = User.create(name: "Josh Dunn", username: "josh_dunn", password: "drumsticks", bio: "JOSH DUNN!!", favorite_genre: "Rock", user_avatar: "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/05/31/Style/Images/twentyonepilots.promo4-JabariJacobs2.jpg?t=20170517")
 
-puts "🏕 Seeding songs..."
-sweatpants = Song.create(title: "IV.Sweatpants", feature: "Problem", hours: 0, minutes: 3, seconds: 1, streams: 9887)
-weak = Song.create(title: "Weak", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 3213)
-karma = Song.create(title: "Karma", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 9052)
-ordinary_people = Song.create(title: "Ordinaryish People", feature: "Blue Man Group", hours: 0, minutes: 3, seconds: 1, streams: 2109)
-stressed_out = Song.create(title: "Stressed Out", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 15075)
-trees = Song.create(title: "Trees", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 14008)
-
 puts "🏕 Seeding albums..."
 
 because_the_internet = Album.create(title: "Because The Internet",
@@ -23,9 +15,7 @@ because_the_internet = Album.create(title: "Because The Internet",
                                     hours: 0,
                                     minutes: 57,
                                     seconds: 52,
-                                    likes: 8005,
-                                    user_id: donald_glover.id,
-                                    song_id: sweatpants.id)
+                                    likes: 8005)
                     
 the_click = Album.create(title: "The Click",
                                     artist: "AJR",
@@ -34,9 +24,7 @@ the_click = Album.create(title: "The Click",
                                     hours: 0,
                                     minutes: 48,
                                     seconds: 1,
-                                    likes: 3212,
-                                    user_id: adam_met.id,
-                                    song_id: weak.id)
+                                    likes: 3212)
 
 neotheater = Album.create(title: "Neotheater",
                                     artist: "AJR",
@@ -45,9 +33,7 @@ neotheater = Album.create(title: "Neotheater",
                                     hours: 0,
                                     minutes: 44,
                                     seconds: 28,
-                                    likes: 6896,
-                                    user_id: jack_met.id,
-                                    song_id: karma.id)
+                                    likes: 6896)
 
 ok = Album.create(title: "OK Orchestra",
                                     artist: "AJR",
@@ -56,9 +42,7 @@ ok = Album.create(title: "OK Orchestra",
                                     hours: 0,
                                     minutes: 45,
                                     seconds: 48,
-                                    likes: 5643,
-                                    user_id: ryan_met.id,
-                                    song_id: ordinary_people.id)
+                                    likes: 5643)
 
 blurryface = Album.create(title: "Blurryface",
                                     artist: "Twenty One Pilots",
@@ -67,9 +51,7 @@ blurryface = Album.create(title: "Blurryface",
                                     hours: 0,
                                     minutes: 52,
                                     seconds: 23,
-                                    likes: 8087,
-                                    user_id: tyler_joseph.id,
-                                    song_id: stressed_out.id)
+                                    likes: 8087)
 
 vessel = Album.create(title: "Vessel",
                                     artist: "Twenty One Pilots",
@@ -78,9 +60,17 @@ vessel = Album.create(title: "Vessel",
                                     hours: 0,
                                     minutes: 47,
                                     seconds: 44,
-                                    likes: 10355,
-                                    user_id: josh_dunn.id,
-                                    song_id: trees.id)
+                                    likes: 10355)
+
+puts "🏕 Seeding songs..."
+
+sweatpants = Song.create(title: "IV.Sweatpants", feature: "Problem", hours: 0, minutes: 3, seconds: 1, streams: 9887, user_id: donald_glover.id, album_id: because_the_internet.id)
+weak = Song.create(title: "Weak", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 3213, user_id: adam_met.id, album_id: the_click.id)
+karma = Song.create(title: "Karma", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 9052, user_id: jack_met.id, album_id: neotheater.id)
+ordinary_people = Song.create(title: "Ordinaryish People", feature: "Blue Man Group", hours: 0, minutes: 3, seconds: 1, streams: 2109, user_id: ryan_met.id, album_id: ok.id)
+stressed_out = Song.create(title: "Stressed Out", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 15075, user_id: tyler_joseph.id, album_id: blurryface.id)
+trees = Song.create(title: "Trees", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 14008, user_id: josh_dunn.id, album_id: vessel.id)
+
 
 
 puts "✅ Done seeding!"
@@ -106,3 +96,5 @@ puts "✅ Done seeding!"
 #     "seconds": 42,
 #     "streams": 9887
 # }
+
+# title: "The Click", artist: "AJR", genre: "Pop", album_image: "https://upload.wikimedia.org/wikipedia/en/a/ae/AJR_The_Click.jpg", hours: 0, minutes: 48, seconds: 1, likes: 3212, user_id: 1

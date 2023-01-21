@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get "/albums", to: "albums#index"
   post "new_album", to: "albums#create"
+  get "/my_music", to: "albums#show"
 
   get "/songs", to: "songs#index"
   post "new_song", to: "songs#create"

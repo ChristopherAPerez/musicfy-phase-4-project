@@ -10,19 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_20_040452) do
+ActiveRecord::Schema.define(version: 2023_01_21_115734) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title"
     t.string "artist"
     t.string "genre"
-    t.integer "likes"
+    t.string "album_image"
     t.integer "hours"
     t.integer "minutes"
     t.integer "seconds"
-    t.string "album_image"
-    t.integer "user_id"
-    t.integer "song_id"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,6 +32,8 @@ ActiveRecord::Schema.define(version: 2023_01_20_040452) do
     t.integer "minutes"
     t.integer "seconds"
     t.integer "streams"
+    t.integer "user_id"
+    t.integer "album_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
