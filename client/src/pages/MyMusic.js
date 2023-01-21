@@ -6,7 +6,7 @@ function MyMusic() {
     const [albums, setAlbums] = useState([]);
 
     useEffect(() => {
-        fetch("/my_albums")
+        fetch("/my_music")
           .then((r) => r.json())
           .then((albums) => setAlbums(albums));
       }, []);

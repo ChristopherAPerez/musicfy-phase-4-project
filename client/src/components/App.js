@@ -6,7 +6,8 @@ import NavBar from "./NavBar"
 
 import LoggedIn from "./LoggedIn"
 import Profile from "../pages/Profile"
-import MyMusic from "../pages/MyMusic"
+// import MyMusic from "../pages/MyMusic"
+import Discover from "../pages/Discover"
 
 import LoggedOut from "./LoggedOut"
 import LoginForm from "../pages/LoginForm"
@@ -49,8 +50,10 @@ function App() {
         {user ? (
 
           <Routes>
-            <Route path="/my_music" element={<MyMusic user={user} setUser={setUser} />}>
+            <Route path="/discover" element={<Discover user={user} setUser={setUser} />}>
             </Route>
+            {/* <Route path="/my_music" element={<MyMusic user={user} setUser={setUser} />}>
+            </Route> */}
             <Route path="/profile" element={<Profile user={user} setUser={setUser} />}>
             </Route>
             <Route path="/" element={<LoggedIn user={user} />}>
