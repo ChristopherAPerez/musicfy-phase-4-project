@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
         user = User.find_by(id: session[:user_id])
         if user
             albums = Album.all
-            render json: albums
+            render json: albums, include: :songs
         else
           render json: { errors: ["Not authorized"] }, status: :unauthorized
         end
@@ -14,8 +14,8 @@ class AlbumsController < ApplicationController
     def create
         user = User.find_by(id: session[:user_id])
         if user
-            album = user.albums.create(album_params)
-            if album
+            new_album = Album.create(album_params)
+            if new_album.valid?
                 render json: album, status: :created
             else
                 render json: { errors: ["errors"] }, status: :unprocessable_entity
@@ -28,8 +28,8 @@ class AlbumsController < ApplicationController
     def show
         user = User.find_by(id: session[:user_id])
         if user
-            albums = user.albums
-            render json: albums, include: :song
+            albums = Album.where(id: user.id)
+            render json: albums, include: :songs
         else
             render json: { errors: ["Not authorized"] }, status: :unauthorized
         end

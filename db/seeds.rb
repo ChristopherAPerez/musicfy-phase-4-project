@@ -65,6 +65,8 @@ vessel = Album.create(title: "Vessel",
 puts "🏕 Seeding songs..."
 
 sweatpants = Song.create(title: "IV.Sweatpants", feature: "Problem", hours: 0, minutes: 3, seconds: 1, streams: 9887, user_id: donald_glover.id, album_id: because_the_internet.id)
+three_thousand_five = Song.create(title: "3005", feature: nil, hours: 0, minutes: 3, seconds: 55, streams: 3005, user_id: donald_glover.id, album_id: because_the_internet.id)
+sweatpants = Song.create(title: "I. The Worst Guys", feature: "Chance The Rapper", hours: 0, minutes: 3, seconds: 42, streams: 5678, user_id: donald_glover.id, album_id: because_the_internet.id)
 weak = Song.create(title: "Weak", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 3213, user_id: adam_met.id, album_id: the_click.id)
 karma = Song.create(title: "Karma", feature: nil, hours: 0, minutes: 3, seconds: 1, streams: 9052, user_id: jack_met.id, album_id: neotheater.id)
 ordinary_people = Song.create(title: "Ordinaryish People", feature: "Blue Man Group", hours: 0, minutes: 3, seconds: 1, streams: 2109, user_id: ryan_met.id, album_id: ok.id)
@@ -94,7 +96,9 @@ puts "✅ Done seeding!"
 #     "hours": 0,
 #     "minutes": 3,
 #     "seconds": 42,
-#     "streams": 9887
+#     "streams": 9887,
+#     "user_id": 1,
+#     "album_id": 1
 # }
 
 # title: "The Click", artist: "AJR", genre: "Pop", album_image: "https://upload.wikimedia.org/wikipedia/en/a/ae/AJR_The_Click.jpg", hours: 0, minutes: 48, seconds: 1, likes: 3212, user_id: 1
