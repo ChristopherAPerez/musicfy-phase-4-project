@@ -51,7 +51,7 @@ function App() {
         {user ? (
 
           <Routes>
-            <Route path="/profile" element={<Profile user={user} setUser={setUser}/>}>
+            <Route path="/profile" element={<Profile user={user} setUser={setUser} />}>
             </Route>
             <Route path="/" element={<LoggedIn user={user} />}>
             </Route>

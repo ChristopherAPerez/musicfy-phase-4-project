@@ -15,9 +15,13 @@ function Header({ user, setUser }) {
     navigate("/")
   }
 
+  function handleHome() {
+    navigate("/")
+  }
+
   return (
     <div>
-      <h1>♫ MUSICFY ♫</h1>
+      <h1 onClick={handleHome}>♫ MUSICFY ♫</h1>
       {user ? (
         <>
           <Link to="/profile">Profile</Link>
